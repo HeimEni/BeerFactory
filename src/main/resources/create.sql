@@ -1,6 +1,6 @@
 CREATE TABLE FACTORY (
     idFactory INT AUTO_INCREMENT PRIMARY KEY,
-    nomFactory VARCHAR(50) NOT NULL,
+    nameFactory VARCHAR(50) NOT NULL,
     address VARCHAR(50),
     latitude FLOAT,
     longitude FLOAT,
@@ -18,4 +18,5 @@ CREATE TABLE BEER (
     CONSTRAINT fk_id_factory FOREIGN KEY (idFactory)REFERENCES FACTORY(idFactory)
 );
 
-INSERT INTO FACTORY (idFactory, nomFactory, address, latitude, longitude, openDate) VALUES ('1','nomFactory','addressFactory','185.15','-4545.45','2000-12-12');
+INSERT INTO FACTORY (idFactory, nameFactory, address, latitude, longitude, openDate) VALUES ('1','nomFactory','addressFactory','185.15','-4545.45','2000-12-12');
+INSERT INTO BEER (idBeer, nameBeer, typeBeer, description, alcoholPercentage, evaluation,idFactory) VALUES ('1','nameBeer','TypeBeer','description','100','10','1');

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="container">
+    <div th:replace="~{fragments/head}"></div>
+    <div th:replace="~{fragments/navbar}"></div>
+    <body>
+    <table class="table-bordered">
+        <tr>
+            <td>Nom</td>
+            <td>Description</td>
+            <td>Evaluation</td>
+            <td>Lieu de fabriquation</td>
+        </tr>
+        <tr th:each="beer : ${lstBeers}">
+            <th data-th-text="${beer.name}"></th>
+            <th data-th-text="${beer.description}"></th>
+            <th data-th-text="${beer.evaluation} + '/10'"></th>
+            <th data-th-text="${beer.factory.address}"></th>
+        </tr>
+    </table>
+    </body>
+</div>
+</html>
